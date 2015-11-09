@@ -1,0 +1,16 @@
+{
+  "name": "ionic-base",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-rc.1"
+  },
+  "dependencies": {
+    "ngCordova": "~0.1.12-alpha"
+  },
+  "resolutions": {
+    "ionic": "~1.1.1",
+    "angular": "1.4.3",
+    "angular-animate": "1.4.3",
+    "angular-sanitize": "1.4.3"
+  }
+}
