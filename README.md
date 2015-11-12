@@ -43,8 +43,8 @@ www
 │   │   └── tabs  
 │   │       └── tabs.html  
 │   └── shared  
-│   │   └── services  
-│   │       └── chats.service.js  
+│       └── services  
+│           └── chats.service.js  
 ├── img  
 └── scss  
     ├── _mixins.scss  
