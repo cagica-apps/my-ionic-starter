@@ -1,0 +1,57 @@
+<div class="bottom-drawer" ng-controller="BottomDrawerCtrl">
+    <div class="bottom-visible-row" layout="row" layout-align="space-around center" vertilize-container>
+        <div class="button-wrapper" vertilize>
+            <md-button class="md-fab" aria-label="Eat cake">
+                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+            </md-button>
+            <label>Transferências</label>
+        </div>
+        <div class="button-wrapper" vertilize>
+            <md-button class="md-fab" aria-label="Eat cake">
+                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+            </md-button>
+            <label>Pagamentos</label>
+        </div>
+        <div class="button-wrapper" vertilize>
+            <md-button class="md-fab" aria-label="Eat cake">
+                <md-icon md-svg-src="img/icons/cake.svg"></md-icon>
+            </md-button>
+            <label>Carregamento
+                <br>Telemóvel</label>
+        </div>
+    </div>
+    <div class="bottom-invisible-rows">
+        <div class="first-row" style="width: {{transferScrollWidth}}px">
+            <ion-scroll direction="x" scrollbar-x="false">
+                <div layout="row" layout-align="space-around center" vertilize-container>
+                    <div ng-repeat="option in transferOptions" class="button-wrapper" vertilize>
+                        <md-button class="md-fab" aria-label="{{option.labelText}}">
+                            <md-icon md-svg-src="{{option.icon}}"></md-icon>
+                        </md-button>
+                        <label>{{option.labelText}}</label>
+                    </div>
+                </div>
+            </ion-scroll>
+        </div>
+        <ion-scroll class="second-row" direction="x" scrollbar-x="false" style="width: {{paymentScrollWidth}}px">
+            <div layout="row" layout-align="space-around center" vertilize-container>
+                <div ng-repeat="option in paymentOptions" class="button-wrapper" vertilize>
+                    <md-button class="md-fab" aria-label="{{option.labelText}}">
+                        <md-icon md-svg-src="{{option.icon}}"></md-icon>
+                    </md-button>
+                    <label>{{option.labelText}}</label>
+                </div>
+            </div>
+        </ion-scroll>
+        <ion-scroll class="third-row" direction="x" scrollbar-x="false" style="width: {{customScrollWidth}}px">
+            <div layout="row" layout-align="space-around center" vertilize-container>
+                <div ng-repeat="option in customOptions" class="button-wrapper" vertilize>
+                    <md-button class="md-fab" aria-label="{{option.labelText}}">
+                        <md-icon md-svg-src="{{option.icon}}"></md-icon>
+                    </md-button>
+                    <label>{{option.labelText}}</label>
+                </div>
+            </div>
+        </ion-scroll>
+    </div>
+</div>

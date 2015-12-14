@@ -1,0 +1,33 @@
+<ion-view view-title="Home">
+    <ion-drawer-vertical-wrapper class="has-header" direction="down" state="closed" margin="60" delegate-handle="top-drawer">
+        <ion-drawer-vertical-content>
+            <div ng-include src="'app/components/home/top-drawer/top-drawer.html'"></div>
+        </ion-drawer-vertical-content>
+        <ion-drawer-vertical-handle ng-click="toggleTopDrawer()" />
+    </ion-drawer-vertical-wrapper>
+
+    <ion-content ng-cloak scroll="false">
+        <td-cards>
+            <td-card class="animated-fast" ng-repeat="card in cardsTop track by id" on-destroy="cardDestroyed(cardsTop,'top',$index)" slot="top">
+                <div ng-include="card.template" ng-click="card.click"></div>
+            </td-card>
+        </td-cards>
+        <td-cards>
+            <td-card class="animated-fast" ng-repeat="card in cardsMiddle track by id" on-destroy="cardDestroyed(cardsMiddle,'middle',$index)" slot="middle">
+                <div ng-include="card.template" ng-click="card.click"></div>
+            </td-card>
+        </td-cards>
+        <td-cards>
+            <td-card class="animated-fast" ng-repeat="card in cardsBottom track by id" on-destroy="cardDestroyed(cardsBottom, 'middle', $index)" slot="bottom">
+                <div ng-include="card.template" ng-click="card.click"></div>
+            </td-card>
+        </td-cards>
+    </ion-content>
+
+    <ion-drawer-vertical-wrapper direction="up" state="closed" margin="60" delegate-handle="bottom-drawer">
+        <ion-drawer-vertical-content>
+            <div ng-include src="'app/components/home/bottom-drawer/bottom-drawer.html'"></div>
+        </ion-drawer-vertical-content>
+        <ion-drawer-vertical-handle ng-click="toggleBottomDrawer()" />
+    </ion-drawer-vertical-wrapper>
+</ion-view>

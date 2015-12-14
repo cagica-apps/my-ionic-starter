@@ -28,12 +28,17 @@ $dark:                            #444 !default;
     display: none !important;
 }
 
+.scroll-content-false{
+    z-index: 8 !important;
+}
+
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 @import "mixins";
-@import "www/app/components/accounts/accounts";
+@import "www/app/components/home/home";
 @import "www/app/components/chats/chats";
 @import "www/app/components/dash/dash";
+@import "www/app/components/uments/ument";
 

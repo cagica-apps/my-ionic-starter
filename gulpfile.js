@@ -57,7 +57,7 @@ gulp.task('build', function () {
 gulp.task('templates', function () {
     return gulp.src('www/**/*.html')
         .pipe(templateCache('templates.js', {
-            module: 'starter',
+            module: 'finzzy',
             root: 'templates/'
         }))
         .pipe(gulp.dest('www/dist'));

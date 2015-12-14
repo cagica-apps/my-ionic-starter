@@ -1,0 +1,77 @@
+$margin-drawer: 60px;
+$handler-size: 15px;
+$bar-heigth: 43px;
+//***** Home View scss****//
+ion-view[view-title='Home'] {
+    //*****Drawer style*****//
+    ion-drawer-vertical-handle {
+        height: $handler-size;
+        width: 100%;
+        left: 0;
+        right: 0;
+        background-color: grey;
+    }
+    .bottom-drawer {
+        height: calc(100vh - ($bar-height + $handler-size));
+        .bottom-visible-row {
+            background-color: white;
+        }
+        .bottom-invisible-rows {
+            .first-row,
+            .second-row,
+            .third-row {}
+            .second-row {
+                background-color: white;
+            }
+        }
+        .button-wrapper {
+            min-height: 60px;
+            width: 25%;
+            text-align: center;
+            label {
+                font-size: .7rem;
+                display: inline-block;
+                line-height: 1;
+                color: rgb(237, 127, 46);
+            }
+            button {
+                border-radius: 50%;
+                height: 3rem;
+                width: 3rem;
+                background-color: rgb(237, 127, 46);
+                border: 0;
+            }
+            .md-button.md-fab:not([disabled]):hover {
+                background-color: orangered;
+            }
+        }
+    }
+    .closed .bottom-drawer .bottom-visible-row {
+        button {
+            height: 2.5rem;
+            width: 2.5rem;
+        }
+    }
+    ion-content {
+        margin: $margin-drawer+$handler-size 0px;
+        background-color: rgb(226, 226, 226);
+        td-cards {
+            height: calc(33.3333% - 14px);
+            margin: 10px 15px;
+        }
+        td-card.ng-enter {
+            -webkit-animation-name: zoomIn;
+            animation-name: zoomIn;
+        }
+        td-card,
+        .td-cards,
+        .td-card > div {
+            height: 100%;
+        }
+        .td-card {
+            height: 100%;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+            border-radius: 5px;
+        }
+    }
+}

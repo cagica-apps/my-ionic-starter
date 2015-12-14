@@ -1,1 +1,1 @@
-starter.controllers.controller('DashCtrl', function($scope) {});
+finzzy.controllers.controller('DashCtrl', function($scope) {});

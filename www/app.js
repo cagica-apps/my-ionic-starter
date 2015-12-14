@@ -5,12 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-var starter = {
-    controllers: angular.module('starter.controllers', []),
-    services: angular.module('starter.services', [])
+var finzzy = {
+    controllers: angular.module('finzzy.controllers', []),
+    services: angular.module('finzzy.services', []),
+    directives: angular.module('finzzy.directives', [])
 };
 
-starter.app = angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'ngMaterial'])
+finzzy.app = angular.module('finzzy', ['ionic', 'finzzy.controllers', 'finzzy.services', 'finzzy.directives', 'ngCordova', 'ngMaterial', 'ionic.contrib.drawer.vertical', 'ionic.contrib.ui.tinderCards', 'ngIOS9UIWebViewPatch'])
 
 .run(function ($ionicPlatform, $rootScope) {
     $rootScope.VERSION = window.VERSION;
@@ -35,55 +36,13 @@ starter.app = angular.module('starter', ['ionic', 'starter.controllers', 'starte
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-    // setup an abstract state for the tabs directive
-        .state('tab', {
-        url: "/tab",
-        abstract: true,
-        templateUrl: "app/layout/tabs/tabs.html"
-    })
-
-    // Each tab has its own nav history stack:
-
-    .state('tab.dash', {
-        url: '/dash',
-        views: {
-            'tab-dash': {
-                templateUrl: 'app/components/dash/tab-dash.html',
-                controller: 'DashCtrl'
-            }
-        }
-    })
-
-    .state('tab.chats', {
-            url: '/chats',
-            views: {
-                'tab-chats': {
-                    templateUrl: 'app/components/chats/tab-chats.html',
-                    controller: 'ChatsCtrl'
-                }
-            }
-        })
-        .state('tab.chat-detail', {
-            url: '/chats/:chatId',
-            views: {
-                'tab-chats': {
-                    templateUrl: 'app/components/chats/chat-detail.html',
-                    controller: 'ChatDetailCtrl'
-                }
-            }
-        })
-
-    .state('tab.account', {
-        url: '/account',
-        views: {
-            'tab-account': {
-                templateUrl: 'app/components/accounts/tab-account.html',
-                controller: 'AccountCtrl'
-            }
-        }
+    .state('home', {
+        url: '/home',
+        templateUrl: 'app/components/home/home.html',
+        controller: 'HomeCtrl'
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/dash');
+    $urlRouterProvider.otherwise('/home');
 
 });

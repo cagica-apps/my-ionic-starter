@@ -34,5 +34,10 @@
     "karma-jasmine": "^0.3.5",
     "karma-phantomjs-launcher": "^0.1.4",
     "shelljs": "^0.3.0"
-  }
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ]
 }
